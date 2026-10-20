@@ -17,7 +17,7 @@ model Usuario {
   nome   String
   email  String  @unique
   senha  String
-  cpf    Int     @unique
+  cpf    String     @unique
 
   listas  ListaTarefas[]
   tarefas Tarefa[]
@@ -53,7 +53,7 @@ model Tarefa {
 
 model Sessao {
   id            Int       @id @default(autoincrement())
-  toke   String    @unique
+  token   String    @unique
   criada_em     DateTime  @default(now())
   expira_em     DateTime
   encerrada_em  DateTime?
